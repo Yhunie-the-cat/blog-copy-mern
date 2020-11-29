@@ -1,0 +1,19 @@
+@font-face {
+     font-family: Lato;
+     src: url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+}
+
+$grey:#969696;
+$black: #000;
+
+a{
+     text-decoration: none;
+     text-transform: uppercase;
+     color:$grey;
+     font-family: Lato,sans-serif;
+     font-size:1.2rem;
+}
+
+a:hover{
+     color:$black
+}

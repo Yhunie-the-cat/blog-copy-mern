@@ -1,0 +1,12 @@
+$grey: #969696;
+
+nav{
+     border-top: 10px solid $grey;
+}
+
+ul{
+     display: flex;
+     justify-content: space-evenly;
+     list-style-type: none;
+     margin:12.5px 0;
+}

@@ -1,7 +1,7 @@
-import './App.css';
+import './App.scss';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import NavBar from "./components/NavBar"
-import Home from "./components/Home/Index"
+import HomePage from "./components/Home"
 import About from "./components/About"
 import Photos from "./components/Photos"
 import Shop from "./components/Shop"
@@ -15,14 +15,13 @@ function App() {
       <div className="App">
         <NavBar />
         <Switch>
-          <Route path="/" exact component={Home} />
+          <Route path="/" exact component={HomePage} />
           <Route path="/about" component={About} />
           <Route path="/photos" component={Photos} />
           <Route path="/shop" component={Shop} />
           <Route path="/information" component={Information} />
           <Route path="/blog" component={Blog} />
           <Route path="/contact" component={Contact} />
-
         </Switch>
       </div>
     </Router>

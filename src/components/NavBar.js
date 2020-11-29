@@ -1,19 +1,44 @@
 import React from 'react'
+import { Link } from "react-router-dom"
+import './../styles/navbar.scss';
+import './../styles/links.scss';
+
 
 export default function Navbar() {
-     return (
-          <React.Fragment>
-               <nav class="nav-links">
-                    <ul>
-                         <li><a href="#">Home</a></li>
-                         <li><a href="#">About</a></li>
-                         <li><a href="#">Photos</a></li>
-                         <li><a href="#">Shop</a></li>
-                         <li><a href="#">Information</a></li>
-                         <li><a href="#">Blog</a></li>
-                         <li><a href="#">Contact</a></li>
-                    </ul>
-               </nav>
-          </React.Fragment>
-     )
+
+   return (
+      <React.Fragment>
+         <nav>
+            <ul>
+               <Link to="/">
+                  <li>Home</li>
+               </Link>
+
+               <Link to="/about">
+                  <li>About</li>
+               </Link>
+
+               <Link to="/photos">
+                  <li>Photos</li>
+               </Link>
+
+               <Link to="/shop">
+                  <li>Shop</li>
+               </Link>
+
+               <Link to="/information">
+                  <li>Information</li>
+               </Link>
+
+               <Link to="/blog">
+                  <li>Blog</li>
+               </Link>
+
+               <Link to="/contact">
+                  <li>Contact</li>
+               </Link>
+            </ul>
+         </nav>
+      </React.Fragment>
+   )
 }

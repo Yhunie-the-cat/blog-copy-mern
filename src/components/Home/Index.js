@@ -4,7 +4,7 @@ import MidSectionA from "./MidSectionA"
 import MidSectionB from "./MidSectionB"
 import FooterSection from "./FooterSection"
 
-export default function Home() {
+export default function HomePage() {
      return (
           <React.Fragment>
                <TopSection />
