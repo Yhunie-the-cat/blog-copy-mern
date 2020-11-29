@@ -8,6 +8,8 @@ import Information from "./components/Information"
 import Blog from "./components/Blog"
 import Contact from "./components/Contact"
 
+// mediaquery from 840px
+
 function App() {
   return (
     <Router>

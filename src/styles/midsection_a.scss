@@ -1,0 +1,58 @@
+#mid-section-a{
+     min-height: 1100px;
+     position: relative;
+}
+
+#text-top{
+     max-width: 350px;
+     position: absolute;
+     top: 150px;
+     right: calc(50% + 177.5px);
+     margin-left: 10px;
+}
+
+
+#text-bottom{
+     max-width: 490px;
+     position: absolute;
+     bottom: 144px;
+     left: calc(50% + 20px);
+}
+
+#pen{
+     width: 380px;
+     height: 500px;
+     object-fit: cover;
+     filter: grayscale(100%);
+     position: absolute;
+     right: 50%;
+     bottom: 100px;
+     z-index: 3;
+}
+
+#watch{
+     width: 415px;
+     height: 415px;
+     object-fit: cover;
+     object-position: top;
+     position: absolute;
+     left: 100px;
+     right: 0;
+     top:150px;
+     margin: auto;
+     z-index: 2;
+}
+
+#street{
+     width: calc(50% - 20px);
+     height: 450px;
+     object-fit: cover;
+     filter: grayscale(100%);
+     position: absolute;
+     right: 0;
+     top: 275px;
+}
+
+#mid-line{
+     height: 100%;
+}

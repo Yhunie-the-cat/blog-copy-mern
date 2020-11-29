@@ -1,3 +1,9 @@
+$grey:#969696;
+
+#top-section{
+     min-height: 730px;
+}
+
 #hero-background{
      width: 50%;
      height: 700px;
@@ -13,9 +19,10 @@
      right: 0;
      bottom: 105px;
      margin: auto;
+     filter:sepia(20%);
 }
 
-#hero-container{
+#hero-text{
      max-width:350px;
      position: absolute;
      left: calc(50% + 177.5px);
@@ -24,12 +31,5 @@
 }
 
 #hero-title{
-     color:#969696;
-}
-
-.line{
-     width: 210px;
-     height: 1px;
-     margin-top: 20px;
-     background-color: #969696;
+     color:$grey;
 }

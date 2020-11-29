@@ -64,3 +64,19 @@ p{
      line-height: 1.6;
      margin-bottom: 20px;
 }
+
+.underscore{
+     width: 210px;
+     height: 2px;
+     margin-top: 20px;
+     background-color: $grey2;
+}
+
+.center-line{
+     width: 2px;
+     background-color: $grey2;
+     position: absolute;
+     left: 0;
+     right: 0;
+     margin: auto;
+}
