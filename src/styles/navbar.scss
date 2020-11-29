@@ -5,8 +5,11 @@ nav{
 }
 
 ul{
+     width: 90%;
      display: flex;
      justify-content: space-evenly;
      list-style-type: none;
-     margin:12.5px 0;
+     left: 0;
+     right: 0;
+     margin:12.5px auto;
 }

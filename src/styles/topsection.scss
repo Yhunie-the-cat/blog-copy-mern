@@ -1,0 +1,35 @@
+#hero-background{
+     width: 50%;
+     height: 700px;
+     object-fit: cover;
+     margin-bottom: 30px;
+}
+
+#hero-center{
+     width:315px;
+     height: 450px;
+     position: absolute;
+     left: 0;
+     right: 0;
+     bottom: 105px;
+     margin: auto;
+}
+
+#hero-container{
+     max-width:350px;
+     position: absolute;
+     left: calc(50% + 177.5px);
+     bottom: 105px;
+     margin: auto;
+}
+
+#hero-title{
+     color:#969696;
+}
+
+.line{
+     width: 210px;
+     height: 1px;
+     margin-top: 20px;
+     background-color: #969696;
+}
