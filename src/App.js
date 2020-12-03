@@ -7,8 +7,7 @@ import Shop from "./components/Shop"
 import Information from "./components/Information"
 import Blog from "./components/Blog"
 import Contact from "./components/Contact"
-
-// mediaquery from 840px
+//import "./styles/links.scss"
 
 function App() {
   return (

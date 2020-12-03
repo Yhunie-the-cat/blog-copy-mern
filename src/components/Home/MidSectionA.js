@@ -31,7 +31,7 @@ export default function MidSectionA() {
             <div className="underscore"></div>
          </div>
 
-         <div id="mid-line" className="center-line"></div>
+         <div id="mid-line" ></div>
       </div>
    )
 }
