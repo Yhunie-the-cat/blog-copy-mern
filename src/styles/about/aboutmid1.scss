@@ -1,0 +1,35 @@
+#about-mid-1 {
+  min-height: 929px;
+  padding-top: 80px;
+  h2 {
+    width: fit-content;
+    left: 0;
+    right: 0;
+    margin: 0 auto 60px auto;
+    text-align: center;
+  }
+  img {
+    width: 439px;
+    height: 537px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    position: absolute;
+    right: 50%;
+  }
+}
+
+#about-mid-1-text {
+  max-width: 406px;
+  position: absolute;
+  left: calc(50% + 40px);
+}
+
+#about-center-line {
+  width: 2px;
+  height: 100%;
+  background-color: $grey2;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}

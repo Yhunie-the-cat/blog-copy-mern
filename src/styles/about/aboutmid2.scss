@@ -1,0 +1,55 @@
+#about-mid-2 {
+  position: relative;
+  min-height: 567px;
+  background-color: $grey2;
+  h2 {
+    font-size: 3.2rem;
+    width: fit-content;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 60px auto;
+  }
+  h1 {
+    font-family: Silo;
+    font-size: 20rem;
+    font-weight: 400;
+    color: $white;
+    transform: rotate(-10deg);
+    width: fit-content;
+    position: absolute;
+    left: 70%;
+    bottom: 60px;
+    z-index: 1;
+  }
+}
+
+#about-mid-2-text-container {
+  display: flex;
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 2;
+  div {
+    margin: 0 60px;
+  }
+}
+
+.about-mid-2-text {
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 2.4rem;
+    width: 215px;
+    line-height: normal;
+  }
+}

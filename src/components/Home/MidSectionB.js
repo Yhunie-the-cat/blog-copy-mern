@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link } from "react-router-dom"
-import "./../../styles/links.scss"
-import "./../../styles/midsection_b.scss"
 import woman_in_pool from "./../../images/woman_in_pool.jpg"
 import marble_table from "./../../images/marble_table.jpg"
 

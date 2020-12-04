@@ -1,0 +1,32 @@
+#about-top {
+  position: relative;
+  min-height: 763px;
+}
+
+#about-background {
+  width: 50%;
+  height: 656px;
+  float: right;
+  object-fit: cover;
+  filter: sepia(50%);
+}
+
+#about-center {
+  position: absolute;
+  left: 28%;
+  top: 80px;
+  width: 417px;
+  height: 271px;
+}
+
+#about-text {
+  max-width: 433px;
+  position: absolute;
+  right: calc(50% + 20px);
+  bottom: 107px;
+}
+
+#about-title {
+  font-size: 3.2rem;
+  color: $grey;
+}

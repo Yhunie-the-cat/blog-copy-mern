@@ -1,13 +1,11 @@
 import React from 'react'
 import { Link } from "react-router-dom"
-import './../styles/navbar.scss';
-import './../styles/links.scss';
 
 
-export default function Navbar() {
+export default function Header() {
 
    return (
-      <React.Fragment>
+      <div id="header">
          <nav>
             <ul>
                <Link to="/">Home</Link>
@@ -19,6 +17,7 @@ export default function Navbar() {
                <Link to="/contact">Contact</Link>
             </ul>
          </nav>
-      </React.Fragment>
+         <h1>Kate</h1>
+      </div>
    )
 }

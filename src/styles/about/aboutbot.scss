@@ -1,0 +1,21 @@
+#about-bot {
+  position: relative;
+  img {
+    width: 50%;
+    height: 600px;
+    object-fit: cover;
+  }
+}
+
+#about-bot-text {
+  max-width: 457px;
+  height: fit-content;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: calc(50% + 40px);
+  h2 {
+    text-align: center;
+  }
+}

@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link } from "react-router-dom"
-import "./../../styles/links.scss"
-import "./../../styles/midsection_a.scss"
 import pen from "./../../images/pen.jpg"
 import watch from "./../../images/watch.jpg"
 import street from "./../../images/street.jpg"
