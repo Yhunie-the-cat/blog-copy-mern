@@ -1,17 +1,21 @@
-import React,{useRef} from 'react'
-import PhotosTop from './PhotosTop'
+import React, { useRef } from "react";
+import PhotosTop from "./PhotosTop";
 
-import PhotosBot from './PhotosBot'
+import PhotosBot from "./PhotosBot";
+import Header from "../Header";
+import Footer from "../Footer";
 
 export default function PhotosPage() {
-     const targetRef = useRef();
-     const handleClick = () => {
-          targetRef.current.scrollIntoView()
-     }
-     return (
-          <React.Fragment>
-               <PhotosTop handleClick={handleClick}/>
-               <PhotosBot targetRef={targetRef}/>
-          </React.Fragment>
-     )
+  const targetRef = useRef();
+  const handleClick = () => {
+    targetRef.current.scrollIntoView();
+  };
+  return (
+    <React.Fragment>
+      <Header />
+      <PhotosTop handleClick={handleClick} />
+      <PhotosBot targetRef={targetRef} />
+      <Footer />
+    </React.Fragment>
+  );
 }

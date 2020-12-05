@@ -1,18 +1,14 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import Header from "./components/Header"
-import HomePage from "./components/Home/index"
-import AboutPage from "./components/About/index"
-import PhotosPage from "./components/Photos/index"
-import Blog from "./components/Blog"
-import Contact from "./components/Contact/index"
-import FooterSection from "./components/FooterSection"
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import HomePage from "./components/Home";
+import AboutPage from "./components/About";
+import PhotosPage from "./components/Photos";
+import Blog from "./components/Blog";
+import ContactPage from "./components/Contact";
+import NotFound from "./components/NotFound";
 
 //TODO:
 /*
 20px border mobile screen
-  [x]  About
-      [x]  responsive
 
   []  Photos
       [x]  html
@@ -26,9 +22,9 @@ import FooterSection from "./components/FooterSection"
       []  responsive    
 
   []  Contact
-      []  html
-      []  css
-      []  responsive
+      [x]  html
+      [x]  css
+      [x]  responsive
       []  //? contact form functions
 
   []  Admin page (create blog post)
@@ -42,8 +38,6 @@ import FooterSection from "./components/FooterSection"
       []  css
       []  responsive
 
-  []  404 page
-
   []  burger menu
 
   []  server/api
@@ -53,15 +47,14 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
         <Switch>
           <Route path="/" exact component={HomePage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/photos" component={PhotosPage} />
           <Route path="/blog" component={Blog} />
-          <Route path="/contact" component={Contact} />
+          <Route path="/contact" component={ContactPage} />
+          <Route path="/*" component={NotFound} />
         </Switch>
-        <FooterSection />
       </div>
     </Router>
   );

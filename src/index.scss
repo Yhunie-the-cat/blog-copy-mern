@@ -240,6 +240,43 @@ ul {
 }
 //----------
 
+// 404 page
+#not-found-page {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: fit-content;
+  h1 {
+    font-family: Silo;
+    font-size: calc(1rem + 8vmax);
+    font-weight: 400;
+    color: $black;
+    height: 14rem;
+    margin: 80px 0;
+  }
+  button {
+    width: fit-content;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 2rem;
+    font-weight: 600;
+    color: $grey;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  button:hover {
+    color: $black;
+  }
+}
+//----------
+
 // Home
 @import "./styles/home/topsection.scss";
 @import "./styles/home/midsection_a.scss";
