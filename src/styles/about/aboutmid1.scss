@@ -33,3 +33,22 @@
   right: 0;
   margin: auto;
 }
+
+@media (max-width: 680px) {
+  #about-mid-1 {
+    display: flex;
+    flex-direction: column;
+    img {
+      position: initial;
+      width: 100%;
+    }
+  }
+  #about-mid-1-text {
+    position: initial;
+    margin: 40px 20px;
+    max-width: 100%;
+  }
+  #about-center-line {
+    display: none;
+  }
+}
