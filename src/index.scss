@@ -64,7 +64,7 @@ a:hover {
 }
 
 h2 {
-  font-family: OldStandardTT, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 2.4rem;
   line-height: 1.6;
   margin-bottom: 20px;
@@ -84,7 +84,7 @@ nav {
 }
 
 ul {
-  width: 90%;
+  width: 80%;
   display: flex;
   justify-content: space-evenly;
   list-style-type: none;
@@ -136,6 +136,9 @@ ul {
     left: 0;
     right: 0;
     margin: 50px auto;
+  }
+  a {
+    font-weight: normal;
   }
 }
 
@@ -251,3 +254,6 @@ ul {
 // Photos
 @import "./styles/photos/photostop.scss";
 @import "./styles/photos/photosbot.scss";
+
+// Contact
+@import "./styles/contact/contactpage.scss";

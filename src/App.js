@@ -3,9 +3,8 @@ import Header from "./components/Header"
 import HomePage from "./components/Home/index"
 import AboutPage from "./components/About/index"
 import PhotosPage from "./components/Photos/index"
-import Information from "./components/Information"
 import Blog from "./components/Blog"
-import Contact from "./components/Contact"
+import Contact from "./components/Contact/index"
 import FooterSection from "./components/FooterSection"
 
 
@@ -20,11 +19,6 @@ import FooterSection from "./components/FooterSection"
       [x]  css
       [x]  responsive
       []  //?image slide functions
-
-  []  Information
-      []  html
-      []  css
-      []  responsive
 
   []  Blog
       []  html
@@ -64,7 +58,6 @@ function App() {
           <Route path="/" exact component={HomePage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/photos" component={PhotosPage} />
-          <Route path="/information" component={Information} />
           <Route path="/blog" component={Blog} />
           <Route path="/contact" component={Contact} />
         </Switch>
