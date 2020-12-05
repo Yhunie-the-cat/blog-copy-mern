@@ -142,6 +142,7 @@ ul {
 // Footer
 #footer {
   background-color: $white;
+  position: relative;
   h1 {
     font-family: Silo;
     font-size: 14rem;
@@ -246,3 +247,7 @@ ul {
 @import "./styles/about/aboutmid1.scss";
 @import "./styles/about/aboutmid2.scss";
 @import "./styles/about/aboutbot.scss";
+
+// Photos
+@import "./styles/photos/photostop.scss";
+@import "./styles/photos/photosbot.scss";
