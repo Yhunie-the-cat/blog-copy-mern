@@ -2,6 +2,21 @@ import React from "react";
 import marble_table from "./../../images/marble_table.jpg";
 import pen from "./../../images/pen.jpg";
 
+//TODO:
+/*
+    []  input[text]-ek és a textarea nem lehet üres
+        []  az üres részen pirossal kiírja a hibát
+
+    []  emailnek tartalmaznia kell "@"-ot és "."-ot
+        []  pirossal kiíja ha valamelyik karaktert nem tartalmazza
+
+    []  submit onclick-re
+        []  text-ek eltünnek
+        []  kiírja hogy "az üzenet elküldve"
+
+    []  //? capcha
+*/
+
 export default function ContactMid() {
   return (
     <div id="contact-page">

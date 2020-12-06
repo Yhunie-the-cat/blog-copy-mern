@@ -14,9 +14,9 @@ import NotFound from "./components/NotFound";
       [x]  html
       [x]  css
       [x]  responsive
-      []  //?image slide functions
+      []  image slide functions //! 1.  https://www.youtube.com/watch?v=KcdBOoK3Pfw
 
-  []  Blog
+  []  Blog  //! 7.
       []  html
       []  css
       []  responsive    
@@ -25,22 +25,27 @@ import NotFound from "./components/NotFound";
       [x]  html
       [x]  css
       [x]  responsive
-      []  //? contact form functions
+      []   contact form functions //! 2.
 
-  []  Admin page (create blog post)
+  []  Login page (redirect to admin page) //! 3.
+      [] login functions
+          []  username,pw (error if empty or wrong)
+  
+  []  Admin Page (create blog posts)  //! 4.
       []  html
       []  css
       []  responsive
       []  //? create blog functions
 
-  []  Blog Post Page
+  []  Blog Post Page  //! 6.
       []  html
       []  css
       []  responsive
 
   []  burger menu
 
-  []  server/api
+  []  server/api  //! 5.  https://www.youtube.com/watch?v=vjf774RKrLc
+      []  database
 */
 
 function App() {
