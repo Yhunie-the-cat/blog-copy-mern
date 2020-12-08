@@ -80,6 +80,7 @@ export default function PhotosBot() {
     <div id="photos-bot">
       <div id="photos-bot-text-container">
         <h2>Gallery</h2>
+
         <p>
           Lorem ipsum dolor sit amet, consect etuer adipiscing elit. Aenean
           commodo ligula eget dolor. Aenean massa.

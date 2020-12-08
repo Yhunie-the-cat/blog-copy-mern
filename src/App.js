@@ -4,19 +4,14 @@ import AboutPage from "./components/About";
 import PhotosPage from "./components/Photos";
 import Blog from "./components/Blog";
 import ContactPage from "./components/Contact";
+import AdminPage from "./components/AdminPage";
 import NotFound from "./components/NotFound";
 
 //TODO:
 /*
 20px border mobile screen
 
-  []  Photos
-      [x]  html
-      [x]  css
-      [x]  responsive
-      []  image slide functions //! 1.  https://www.youtube.com/watch?v=KcdBOoK3Pfw
-
-  []  Blog  //! 7.
+[]  Blog  //! 5.
       []  html
       []  css
       []  responsive    
@@ -25,26 +20,22 @@ import NotFound from "./components/NotFound";
       [x]  html
       [x]  css
       [x]  responsive
-      []   contact form functions //! 2.
-
-  []  Login page (redirect to admin page) //! 3.
-      [] login functions
-          []  username,pw (error if empty or wrong)
-  
-  []  Admin Page (create blog posts)  //! 4.
+      []   contact form functions //! 4.
+ 
+  []  Admin Page (create blog posts)  //! 2.
       []  html
       []  css
       []  responsive
       []  //? create blog functions
 
-  []  Blog Post Page  //! 6.
+  []  Blog Post Page  //! 3.
       []  html
       []  css
       []  responsive
 
   []  burger menu
 
-  []  server/api  //! 5.  https://www.youtube.com/watch?v=vjf774RKrLc
+  []  server/api  //! 1.  https://www.youtube.com/watch?v=vjf774RKrLc
       []  database
 */
 
@@ -58,6 +49,7 @@ function App() {
           <Route path="/photos" component={PhotosPage} />
           <Route path="/blog" component={Blog} />
           <Route path="/contact" component={ContactPage} />
+          <Route path="/admin" component={AdminPage} />
           <Route path="/*" component={NotFound} />
         </Switch>
       </div>

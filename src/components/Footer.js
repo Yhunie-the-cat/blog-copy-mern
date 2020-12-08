@@ -5,8 +5,6 @@ import watch from "./../images/watch.jpg";
 import woman_portrait from "./../images/woman_portrait.jpg";
 import pen from "./../images/pen.jpg";
 
-//<span>Photo by <a href="https://unsplash.com/@heinrich_boll?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Mohammad Rezaie</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
-
 export default function Footer() {
   return (
     <div id="footer">

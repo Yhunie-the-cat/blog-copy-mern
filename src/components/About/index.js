@@ -8,6 +8,7 @@ import Footer from "../Footer";
 
 export default function AboutPage() {
   const targetRef = useRef();
+
   const handleClick = () => {
     targetRef.current.scrollIntoView();
   };

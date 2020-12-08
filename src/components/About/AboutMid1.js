@@ -6,7 +6,9 @@ export default function AboutMid1(props) {
   return (
     <div id="about-mid-1" ref={props.targetRef}>
       <h2>"Sometimes the simplest things are the most profound"</h2>
+
       <img src={street} alt="street" />
+
       <div id="about-mid-1-text">
         <p>
           Lorem ipsum dolor sit amet, consect etuer adipiscing elit. Aenean
@@ -20,9 +22,11 @@ export default function AboutMid1(props) {
           et magnis dis parturient montes, nascetur ridiculus mus. Aenean
           commodo. Lorem ipsum dolor sit amet, consect etuer adipiscing elit.
         </p>
+
         <Link to="/contact">Let's connect</Link>
         <div className="underscore"></div>
       </div>
+
       <div id="about-center-line"></div>
     </div>
   );
