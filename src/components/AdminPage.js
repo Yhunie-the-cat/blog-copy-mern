@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 export default function AdminPage() {
   const [data, setData] = useState([]);
@@ -11,6 +13,42 @@ export default function AdminPage() {
   const deleteButton = useRef();
 
   const url = "http://localhost:5000/posts";
+
+  const textEditorModules = {
+    toolbar: [
+      [{ header: "1" }, { font: [] }],
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+      ["bold", "italic", "underline", "strike"],
+      [
+        { list: "ordered" },
+        { list: "bullet" },
+        { indent: "-1" },
+        { indent: "+1" },
+      ],
+      ["link", "image"],
+    ],
+    clipboard: {
+      // toggle to add extra line breaks when pasting HTML:
+      matchVisual: false,
+    },
+  };
+
+  const textEditorFormats = [
+    "header",
+    "font",
+    "size",
+    "bold",
+    "italic",
+    "underline",
+    "strike",
+    "blockquote",
+    "list",
+    "bullet",
+    "indent",
+    "link",
+    "image",
+    "video",
+  ];
 
   const createPostButton = () => {
     axios
@@ -64,6 +102,12 @@ export default function AdminPage() {
       });
   }, []);
 
+  const test = useRef();
+  const checkRef = () => {
+    test.current.innerHTML = message.current.state.value;
+    console.log(message.current.state.value);
+  };
+
   return (
     <div id="admin-page">
       {data.map((item, index) => {
@@ -83,11 +127,22 @@ export default function AdminPage() {
       <div id="editor">
         <input type="text" placeholder="Title" ref={title} />
         <input type="text" placeholder="Author" ref={author} />
-        <textarea type="text" placeholder="Message" ref={message} />
+        <ReactQuill
+          id="text-field"
+          placeholder="Write something..."
+          modules={textEditorModules}
+          formats={textEditorFormats}
+          ref={message}
+        />
       </div>
 
-      <button onClick={createPostButton}>Create Post</button>
-      <button onClick={updatePostButton}>Update Post</button>
+      <div id="button-container">
+        <button onClick={createPostButton}>Create Post</button>
+        <button onClick={updatePostButton}>Update Post</button>
+        <button onClick={checkRef}>Check Ref</button>
+      </div>
+
+      <div ref={test}></div>
     </div>
   );
 }
