@@ -35,7 +35,9 @@ export const getPostByID = async (req, res) => {
 // Delete specific post
 export const deletePostByID = async (req, res) => {
   try {
-    const deleteMessage = await PostMessage.remove({ _id: req.params.postID });
+    const deleteMessage = await PostMessage.deleteOne({
+      _id: req.params.postID,
+    });
     res.status(200).json(deleteMessage);
   } catch (error) {
     res.status(404).json({ message: error.message });
