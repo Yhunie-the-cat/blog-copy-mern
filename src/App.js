@@ -40,21 +40,21 @@ import NotFound from "./components/NotFound";
 */
 
 function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Switch>
-          <Route path="/" exact component={HomePage} />
-          <Route path="/about" component={AboutPage} />
-          <Route path="/photos" component={PhotosPage} />
-          <Route path="/blog" component={Blog} />
-          <Route path="/contact" component={ContactPage} />
-          <Route path="/admin" component={AdminPage} />
-          <Route path="/*" component={NotFound} />
-        </Switch>
-      </div>
-    </Router>
-  );
+   return (
+      <Router>
+         <div className="App">
+            <Switch>
+               <Route path="/" exact component={HomePage} />
+               <Route path="/about" component={AboutPage} />
+               <Route path="/photos" component={PhotosPage} />
+               <Route path="/blog" component={Blog} />
+               <Route path="/contact" component={ContactPage} />
+               <Route path="/admin" component={AdminPage} />
+               <Route path="/*" component={NotFound} />
+            </Switch>
+         </div>
+      </Router>
+   );
 }
 
 export default App;
