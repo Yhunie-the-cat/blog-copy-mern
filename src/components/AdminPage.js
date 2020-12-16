@@ -11,9 +11,6 @@ import {
 } from "@material-ui/icons";
 import { withStyles } from "@material-ui/core/styles";
 
-//!TODO     test
-//!TODO     res,err handling
-
 export default function AdminPage() {
    //Base url / Store data from the API
    const url = "http://localhost:5000/posts";

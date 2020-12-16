@@ -5,26 +5,22 @@ import PhotosPage from "./components/Photos";
 import BlogPage from "./components/Blog/";
 import ContactPage from "./components/Contact";
 import AdminPage from "./components/AdminPage";
+import Post from "./components/Post";
 import NotFound from "./components/NotFound";
 
 //TODO:
 /*
 20px border mobile screen
 
-   []  Blog  //! 1.
-      []  html
-      []  css
+   []  Blog page //! 1.
+      [x]  html
+      [x]  css
       []  responsive    
-
-  []  Blog Post Page  //! 2.
-      []  html
-      []  css
-      []  responsive
 
   []  burger menu
 
   []  add imgurl to schema
-  
+
   []  set mongodb ip address
 */
 
@@ -39,6 +35,7 @@ function App() {
                <Route path="/blog" component={BlogPage} />
                <Route path="/contact" component={ContactPage} />
                <Route path="/admin" component={AdminPage} />
+               <Route path="/post/:title" component={Post} />
                <Route path="/*" component={NotFound} />
             </Switch>
          </div>

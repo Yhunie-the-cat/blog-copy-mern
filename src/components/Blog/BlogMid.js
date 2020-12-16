@@ -40,12 +40,13 @@ export default function BlogMid() {
          <div id="blog-mid-list">
             {data.map((item, index) => {
                return (
-                  <div>
+                  <div key={index}>
                      <img src="" alt="" />
                      <Link
-                        to={`/post/${item.title
-                           .toLowerCase()
-                           .replace(/ /g, "_")}`}
+                        to={{
+                           pathname: `/post/${item.title.replace(/ /g, "_")}`,
+                           state: { id: item._id },
+                        }}
                      >
                         {item.title}
                      </Link>

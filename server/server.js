@@ -31,17 +31,17 @@ const uri = process.env.ATLAS_URI;
 const connection = mongoose.connection;
 
 connection.once("open", () => {
-  console.log("MongoDB database connection established successfully!");
+   console.log("MongoDB database connection established successfully!");
 });
 
 mongoose
-  .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() =>
-    app.listen(PORT, () =>
-      console.log(`Server running on port: http://localhost:${PORT}`)
-    )
-  )
-  .catch((error) => console.log(error.message));
+   .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+   .then(() =>
+      app.listen(PORT, () =>
+         console.log(`Server running on port: http://localhost:${PORT}`)
+      )
+   )
+   .catch((error) => console.log(error.message));
 
 //  Start server
 /*app.listen(PORT, () =>
