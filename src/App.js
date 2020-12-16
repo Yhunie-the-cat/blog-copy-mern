@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "./components/Home";
 import AboutPage from "./components/About";
 import PhotosPage from "./components/Photos";
-import Blog from "./components/Blog";
+import BlogPage from "./components/Blog/";
 import ContactPage from "./components/Contact";
 import AdminPage from "./components/AdminPage";
 import NotFound from "./components/NotFound";
@@ -11,7 +11,7 @@ import NotFound from "./components/NotFound";
 /*
 20px border mobile screen
 
-[]  Blog  //! 1.
+   []  Blog  //! 1.
       []  html
       []  css
       []  responsive    
@@ -22,6 +22,10 @@ import NotFound from "./components/NotFound";
       []  responsive
 
   []  burger menu
+
+  []  add imgurl to schema
+  
+  []  set mongodb ip address
 */
 
 function App() {
@@ -32,7 +36,7 @@ function App() {
                <Route path="/" exact component={HomePage} />
                <Route path="/about" component={AboutPage} />
                <Route path="/photos" component={PhotosPage} />
-               <Route path="/blog" component={Blog} />
+               <Route path="/blog" component={BlogPage} />
                <Route path="/contact" component={ContactPage} />
                <Route path="/admin" component={AdminPage} />
                <Route path="/*" component={NotFound} />
