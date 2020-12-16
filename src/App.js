@@ -11,32 +11,17 @@ import NotFound from "./components/NotFound";
 /*
 20px border mobile screen
 
-[]  Blog  //! 5.
+[]  Blog  //! 1.
       []  html
       []  css
       []  responsive    
 
-  []  Contact
-      [x]  html
-      [x]  css
-      [x]  responsive
-      []   contact form functions //! 4.
- 
-  []  Admin Page (create blog posts)  //! 2.
-      []  html
-      []  css
-      []  responsive
-      []  //? create blog functions
-
-  []  Blog Post Page  //! 3.
+  []  Blog Post Page  //! 2.
       []  html
       []  css
       []  responsive
 
   []  burger menu
-
-  []  server/api  //! 1.  https://www.youtube.com/watch?v=vjf774RKrLc
-      []  database
 */
 
 function App() {
