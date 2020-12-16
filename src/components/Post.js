@@ -7,7 +7,7 @@ export default function Post() {
    const { title, author, message, date } = data;
    const textContentRef = useRef();
    const location = useLocation();
-   const postID = Object.values(location.state);
+   const [postID] = useState(Object.values(location.state));
 
    const url = "http://localhost:5000/posts";
 
@@ -20,7 +20,7 @@ export default function Post() {
          .catch((error) => {
             console.log(error);
          });
-   }, []);
+   }, [postID]);
 
    if (textContentRef.current) {
       textContentRef.current.innerHTML = message;
