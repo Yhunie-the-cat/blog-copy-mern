@@ -1,10 +1,10 @@
 #blog-mid-text-content {
-   height: 440px;
+   min-height: 440px;
+   height: fit-content;
    background-color: $white2;
    display: flex;
    align-items: center;
    justify-content: center;
-   margin-bottom: 80px;
    img {
       width: 250px;
       height: 250px;
@@ -29,12 +29,13 @@
 #blog-mid-list {
    width: fit-content;
    display: grid;
-   grid-template-columns: 1fr 1fr;
+   grid-template-columns: repeat(2, 1fr);
    column-gap: 60px;
    left: 0;
    right: 0;
    margin: auto;
    margin-bottom: 40px;
+   margin-top: 80px;
    img {
       width: 500px;
       height: 350px;
@@ -48,5 +49,33 @@
       flex-direction: column;
       margin-bottom: 100px;
       background-color: $white;
+   }
+}
+
+@media (max-width: 1100px) {
+   #blog-underscore {
+      margin-bottom: 40px;
+   }
+   #blog-mid-list {
+      grid-template-columns: 1fr;
+   }
+}
+
+@media (max-width: 560px) {
+   #blog-mid-text-content {
+      flex-direction: column;
+      img {
+         margin: 20px 0;
+      }
+      div {
+         margin: 0 20px;
+      }
+   }
+
+   #blog-mid-list {
+      img {
+         width: 350px;
+         height: 200px;
+      }
    }
 }

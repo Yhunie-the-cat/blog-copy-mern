@@ -12,11 +12,6 @@ import NotFound from "./components/NotFound";
 /*
 20px border mobile screen
 
-   []  Blog page //! 1.
-      [x]  html
-      [x]  css
-      []  responsive    
-
   []  burger menu
 
   []  add imgurl to schema
