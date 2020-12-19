@@ -16,6 +16,7 @@ export default function AdminPage() {
    const url = "http://localhost:5000/posts";
    const [data, setData] = useState([]);
    const [statusText, setStatusText] = useState("");
+   const [postID, setPostID] = useState("");
    const statusRef = useRef();
    const status = statusRef.current;
 
@@ -31,6 +32,7 @@ export default function AdminPage() {
       status.hidden = false;
       setTimeout(() => {
          status.hidden = true;
+         setStatusText("");
       }, 1800);
    };
 
@@ -83,6 +85,7 @@ export default function AdminPage() {
 
    //Actions
    const createPostButton = () => {
+      console.log(messageRef.current.get);
       if (
          title.value === "" ||
          author.value === "" ||
@@ -117,6 +120,7 @@ export default function AdminPage() {
    };
 
    const editPostButton = (id) => {
+      setPostID(id);
       setIsClicked(true);
       axios
          .get(`${url}/${id}`)
@@ -143,10 +147,15 @@ export default function AdminPage() {
             console.log(error);
             setStatusText(error.response.data.message);
          });
+      title.value = "";
+      author.value = "";
+      message.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].innerHTML =
+         "";
       showStatus();
    };
 
    const updatePostButton = () => {
+      console.log(editButton);
       if (
          title.value === "" ||
          author.value === "" ||
@@ -157,7 +166,7 @@ export default function AdminPage() {
       } else {
          setIsClicked(true);
          axios
-            .patch(`${url}/${editButton.current.id}`, {
+            .patch(`${url}/${postID}`, {
                title: title.value,
                author: author.value,
                message:
@@ -227,7 +236,6 @@ export default function AdminPage() {
                            variant="contained"
                            color="default"
                            startIcon={<Edit />}
-                           id={item._id}
                            ref={editButton}
                            onClick={() => editPostButton(item._id)}
                         >
@@ -237,7 +245,6 @@ export default function AdminPage() {
                            variant="contained"
                            color="secondary"
                            startIcon={<Delete />}
-                           id={item._id}
                            onClick={() => deletePostButton(item._id)}
                         >
                            Delete
@@ -253,6 +260,7 @@ export default function AdminPage() {
             <div id="editor">
                <input type="text" placeholder="Title" ref={titleRef} />
                <input type="text" placeholder="Author" ref={authorRef} />
+
                <Button
                   variant="contained"
                   color="default"
@@ -261,6 +269,7 @@ export default function AdminPage() {
                >
                   Clear
                </Button>
+
                <textarea id="text-field" ref={messageRef}></textarea>
             </div>
 

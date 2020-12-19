@@ -421,14 +421,13 @@ ul {
    width: 100%;
    height: 80%;
    input {
+      width: 160px;
       font-size: 2rem;
       margin-bottom: 20px;
-   }
-   input[placeholder="Title"] {
       margin-right: 40px;
    }
-   form {
-      height: 100%;
+   input[type="file"] {
+      width: fit-content;
    }
    button {
       float: right;

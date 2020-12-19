@@ -2,10 +2,33 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import woman_in_sunglasses from "./../../images/woman_in_sunglasses.jpg";
+import blonde from "./../../images/blonde.jpg";
+import camera from "./../../images/camera.jpg";
+import marble_table from "./../../images/marble_table.jpg";
+import palm_leaf from "./../../images/palm_leaf.jpg";
+import pen from "./../../images/pen.jpg";
+import street from "./../../images/street.jpg";
+import watch from "./../../images/watch.jpg";
+import woman_in_hat from "./../../images/woman_in_hat.jpg";
+import woman_in_pool from "./../../images/woman_in_pool.jpg";
+import woman_portrait from "./../../images/woman_portrait.jpg";
 
 export default function BlogMid() {
    const url = "http://localhost:5000/posts";
    const [data, setData] = useState([]);
+
+   const randomPictures = [
+      blonde,
+      camera,
+      marble_table,
+      palm_leaf,
+      pen,
+      street,
+      watch,
+      woman_in_hat,
+      woman_in_pool,
+      woman_portrait,
+   ];
 
    useEffect(() => {
       axios
@@ -41,7 +64,11 @@ export default function BlogMid() {
             {data.map((item, index) => {
                return (
                   <div key={index}>
-                     <img src="" alt="" />
+                     <img
+                        src={randomPictures[index]}
+                        style={{ objectFit: "cover" }}
+                        alt="woman_in_sunglasses"
+                     />
                      <Link
                         to={{
                            pathname: `/post/${item.title.replace(/ /g, "_")}`,

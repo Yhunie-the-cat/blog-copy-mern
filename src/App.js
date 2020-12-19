@@ -10,7 +10,6 @@ import NotFound from "./components/NotFound";
 
 //TODO:
 /*
-20px border mobile screen
   []  add imgurl to schema
 
   []  set mongodb ip address
