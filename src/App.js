@@ -11,9 +11,6 @@ import NotFound from "./components/NotFound";
 //TODO:
 /*
 20px border mobile screen
-
-  []  burger menu
-
   []  add imgurl to schema
 
   []  set mongodb ip address

@@ -17,49 +17,54 @@ export default function AdminPage() {
    const [data, setData] = useState([]);
    const [statusText, setStatusText] = useState("");
    const statusRef = useRef();
-
-   const showStatus = () => {
-      statusRef.current.hidden = false;
-      setTimeout(() => {
-         statusRef.current.hidden = true;
-      }, 1800);
-   };
-
-   const inputIsEmpty = () => {
-      titleRef.current.value = "Title is empty!";
-      titleRef.current.style.color = "red";
-      authorRef.current.value = "Author is empty!";
-      authorRef.current.style.color = "red";
-      messageRef.current.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].innerHTML =
-         "Message is empty!";
-      messageRef.current.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].style.color =
-         "red";
-
-      setTimeout(() => {
-         titleRef.current.value = "";
-         titleRef.current.color = "";
-         authorRef.current.value = "";
-         authorRef.current.color = "";
-         messageRef.current.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].innerHTML =
-            "";
-         messageRef.current.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].style.color =
-            "";
-      }, 1500);
-   };
+   const status = statusRef.current;
 
    //Blog
    const titleRef = useRef();
    const authorRef = useRef();
    const messageRef = useRef();
+   const title = titleRef.current;
+   const author = authorRef.current;
+   const message = messageRef.current;
+
+   const showStatus = () => {
+      status.hidden = false;
+      setTimeout(() => {
+         status.hidden = true;
+      }, 1800);
+   };
+
+   const inputIsEmpty = () => {
+      title.value = "Title is empty!";
+      title.style.color = "red";
+      author.value = "Author is empty!";
+      author.style.color = "red";
+      message.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].innerHTML =
+         "Message is empty!";
+      message.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].style.color =
+         "red";
+
+      setTimeout(() => {
+         title.value = "";
+         title.style.color = "";
+         author.value = "";
+         author.style.color = "";
+         message.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].innerHTML =
+            "";
+         message.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].style.color =
+            "";
+      }, 1500);
+   };
 
    //Action buttons
    const [isClicked, setIsClicked] = useState(false);
    const editButton = useRef();
-   const deleteButton = useRef();
 
    //Preview blog
-   const previewContainer = useRef();
-   const preview = useRef();
+   const previewContainerRef = useRef();
+   const previewContainer = previewContainerRef.current;
+   const previewRef = useRef();
+   const preview = previewRef.current;
 
    //Render data
    useEffect(() => {
@@ -79,21 +84,21 @@ export default function AdminPage() {
    //Actions
    const createPostButton = () => {
       if (
-         titleRef.current.value === "" ||
-         authorRef.current.value === "" ||
-         messageRef.current.nextSibling.children[0].children[1].children[0]
-            .children[0].contentDocument.all[5].innerHTML === ""
+         title.value === "" ||
+         author.value === "" ||
+         message.nextSibling.children[0].children[1].children[0].children[0]
+            .contentDocument.all[5].innerHTML === ""
       ) {
          inputIsEmpty();
       } else {
          setIsClicked(true);
          axios
             .post(url, {
-               title: titleRef.current.value,
-               author: authorRef.current.value,
+               title: title.value,
+               author: author.value,
                message:
-                  messageRef.current.nextSibling.children[0].children[1]
-                     .children[0].children[0].contentDocument.all[5].innerHTML,
+                  message.nextSibling.children[0].children[1].children[0]
+                     .children[0].contentDocument.all[5].innerHTML,
             })
             .then((res) => {
                console.log(res.statusText);
@@ -103,9 +108,9 @@ export default function AdminPage() {
                console.log(error.response);
                setStatusText(error.response.data.message);
             });
-         titleRef.current.value = "";
-         authorRef.current.value = "";
-         messageRef.current.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].innerHTML =
+         title.value = "";
+         author.value = "";
+         message.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].innerHTML =
             "";
          showStatus();
       }
@@ -116,9 +121,9 @@ export default function AdminPage() {
       axios
          .get(`${url}/${id}`)
          .then((res) => {
-            titleRef.current.value = res.data.title;
-            authorRef.current.value = res.data.author;
-            messageRef.current.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].innerHTML =
+            title.value = res.data.title;
+            author.value = res.data.author;
+            message.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].innerHTML =
                res.data.message;
          })
          .catch((error) => {
@@ -143,21 +148,21 @@ export default function AdminPage() {
 
    const updatePostButton = () => {
       if (
-         titleRef.current.value === "" ||
-         authorRef.current.value === "" ||
-         messageRef.current.nextSibling.children[0].children[1].children[0]
-            .children[0].contentDocument.all[5].innerHTML === ""
+         title.value === "" ||
+         author.value === "" ||
+         message.nextSibling.children[0].children[1].children[0].children[0]
+            .contentDocument.all[5].innerHTML === ""
       ) {
          inputIsEmpty();
       } else {
          setIsClicked(true);
          axios
             .patch(`${url}/${editButton.current.id}`, {
-               title: titleRef.current.value,
-               author: authorRef.current.value,
+               title: title.value,
+               author: author.value,
                message:
-                  messageRef.current.nextSibling.children[0].children[1]
-                     .children[0].children[0].contentDocument.all[5].innerHTML,
+                  message.nextSibling.children[0].children[1].children[0]
+                     .children[0].contentDocument.all[5].innerHTML,
             })
             .then((res) => {
                console.log(res);
@@ -168,22 +173,22 @@ export default function AdminPage() {
                setStatusText(error.response.data.message);
             });
 
-         titleRef.current.value = "";
-         authorRef.current.value = "";
-         messageRef.current.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].innerHTML =
+         title.value = "";
+         author.value = "";
+         message.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].innerHTML =
             "";
          showStatus();
       }
    };
 
    const previewPostButton = () => {
-      previewContainer.current.hidden = false;
-      preview.current.innerHTML =
-         messageRef.current.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].innerHTML;
+      previewContainer.hidden = false;
+      preview.innerHTML =
+         message.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].innerHTML;
    };
 
-   const closePreviewContainer = () => {
-      previewContainer.current.hidden = true;
+   const closepreviewContainerRef = () => {
+      previewContainer.hidden = true;
    };
    //----------
 
@@ -200,9 +205,9 @@ export default function AdminPage() {
 
    //Clear button
    const clearButton = () => {
-      titleRef.current.value = "";
-      authorRef.current.value = "";
-      messageRef.current.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].innerHTML =
+      title.value = "";
+      author.value = "";
+      message.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].innerHTML =
          "";
    };
    //----------
@@ -233,7 +238,6 @@ export default function AdminPage() {
                            color="secondary"
                            startIcon={<Delete />}
                            id={item._id}
-                           ref={deleteButton}
                            onClick={() => deletePostButton(item._id)}
                         >
                            Delete
@@ -288,9 +292,9 @@ export default function AdminPage() {
             </div>
          </div>
 
-         <div id="preview" ref={previewContainer} hidden>
-            <h4 onClick={closePreviewContainer}>Close</h4>
-            <div ref={preview}></div>
+         <div id="preview" ref={previewContainerRef} hidden>
+            <h4 onClick={closepreviewContainerRef}>Close</h4>
+            <div ref={previewRef}></div>
          </div>
 
          <div id="status" ref={statusRef} hidden>
