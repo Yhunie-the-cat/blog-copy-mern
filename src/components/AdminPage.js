@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import {
    CreateOutlined as Create,
@@ -77,8 +78,9 @@ export default function AdminPage() {
          })
          .catch((error) => {
             console.log(error);
-            setStatusText(error.response.data.message);
+            setStatusText("Network error!");
          });
+
       setIsClicked(false);
    }, [isClicked]);
    //----------
@@ -224,91 +226,99 @@ export default function AdminPage() {
    //Render
    return (
       <div id="admin-page">
-         <div id="admin-left">
-            <h2>Posts</h2>
-
-            <div id="post-list-container">
-               {data.map((item, index) => {
-                  return (
-                     <div key={index}>
-                        <p>{item.title}</p>
-                        <Button
-                           variant="contained"
-                           color="default"
-                           startIcon={<Edit />}
-                           ref={editButton}
-                           onClick={() => editPostButton(item._id)}
-                        >
-                           Edit
-                        </Button>
-                        <Button
-                           variant="contained"
-                           color="secondary"
-                           startIcon={<Delete />}
-                           onClick={() => deletePostButton(item._id)}
-                        >
-                           Delete
-                        </Button>
-                     </div>
-                  );
-               })}
+         {statusText === "Network error!" ? (
+            <div id="error">
+               <h2>{statusText}</h2>
+               <Link to="/">Go to home page</Link>
             </div>
-         </div>
+         ) : (
+            <>
+               <div id="admin-left">
+                  <h2>Posts</h2>
+                  <div id="post-list-container">
+                     {data.map((item, index) => {
+                        return (
+                           <div key={index}>
+                              <p>{item.title}</p>
+                              <Button
+                                 variant="contained"
+                                 color="default"
+                                 startIcon={<Edit />}
+                                 ref={editButton}
+                                 onClick={() => editPostButton(item._id)}
+                              >
+                                 Edit
+                              </Button>
+                              <Button
+                                 variant="contained"
+                                 color="secondary"
+                                 startIcon={<Delete />}
+                                 onClick={() => deletePostButton(item._id)}
+                              >
+                                 Delete
+                              </Button>
+                           </div>
+                        );
+                     })}
+                  </div>
+               </div>
 
-         <div id="admin-right">
-            <h2>Editor</h2>
-            <div id="editor">
-               <input type="text" placeholder="Title" ref={titleRef} />
-               <input type="text" placeholder="Author" ref={authorRef} />
+               <div id="admin-right">
+                  <h2>Editor</h2>
+                  <div id="editor">
+                     <input type="text" placeholder="Title" ref={titleRef} />
+                     <input type="text" placeholder="Author" ref={authorRef} />
 
-               <Button
-                  variant="contained"
-                  color="default"
-                  startIcon={<Clear />}
-                  onClick={clearButton}
-               >
-                  Clear
-               </Button>
+                     <Button
+                        variant="contained"
+                        color="default"
+                        startIcon={<Clear />}
+                        onClick={clearButton}
+                     >
+                        Clear
+                     </Button>
 
-               <textarea id="text-field" ref={messageRef}></textarea>
-            </div>
+                     <textarea id="text-field" ref={messageRef}></textarea>
+                  </div>
 
-            <div id="button-container">
-               <Button
-                  variant="contained"
-                  color="primary"
-                  startIcon={<Search />}
-                  onClick={previewPostButton}
-               >
-                  Preview
-               </Button>
-               <CustomButton
-                  variant="contained"
-                  color="primary"
-                  startIcon={<Create />}
-                  onClick={createPostButton}
-               >
-                  Create
-               </CustomButton>
-               <Button
-                  variant="contained"
-                  color="primary"
-                  startIcon={<Update />}
-                  onClick={updatePostButton}
-               >
-                  Update
-               </Button>
-            </div>
-         </div>
+                  <div id="button-container">
+                     <Button
+                        variant="contained"
+                        color="primary"
+                        startIcon={<Search />}
+                        onClick={previewPostButton}
+                     >
+                        Preview
+                     </Button>
+                     <CustomButton
+                        variant="contained"
+                        color="primary"
+                        startIcon={<Create />}
+                        onClick={createPostButton}
+                     >
+                        Create
+                     </CustomButton>
+                     <Button
+                        variant="contained"
+                        color="primary"
+                        startIcon={<Update />}
+                        onClick={updatePostButton}
+                     >
+                        Update
+                     </Button>
+                  </div>
+               </div>
 
-         <div id="preview" ref={previewContainerRef} hidden>
-            <h4 onClick={closepreviewContainerRef}>Close</h4>
-            <div ref={previewRef}></div>
-         </div>
+               <div id="preview" ref={previewContainerRef} hidden>
+                  <h4 onClick={closepreviewContainerRef}>Close</h4>
+                  <div ref={previewRef}></div>
+               </div>
 
-         <div id="status" ref={statusRef} hidden>
-            <h4>{statusText}</h4>
-         </div>
+               <div id="status" ref={statusRef} hidden>
+                  <h4>{statusText}</h4>
+               </div>
+            </>
+         )}
       </div>
    );
 }
