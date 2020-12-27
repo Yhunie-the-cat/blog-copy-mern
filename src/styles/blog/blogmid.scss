@@ -26,6 +26,20 @@
    background-color: $grey;
 }
 
+#error-container {
+   h1 {
+      width: fit-content;
+      font-family: Silo;
+      font-size: calc(1rem + 8vmax);
+      font-weight: 400;
+      color: $black;
+      height: 14rem;
+      left: 0;
+      right: 0;
+      margin: 80px auto 0 auto;
+   }
+}
+
 #blog-mid-list {
    width: fit-content;
    display: grid;
@@ -36,6 +50,7 @@
    margin: auto;
    margin-bottom: 40px;
    margin-top: 80px;
+
    img {
       width: 500px;
       height: 350px;

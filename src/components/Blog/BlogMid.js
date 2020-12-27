@@ -16,6 +16,7 @@ import woman_portrait from "./../../images/woman_portrait.jpg";
 export default function BlogMid() {
    const url = "http://localhost:5000/posts";
    const [data, setData] = useState([]);
+   const [error, setError] = useState("");
 
    const randomPictures = [
       blonde,
@@ -38,6 +39,7 @@ export default function BlogMid() {
          })
          .catch((error) => {
             console.log(error);
+            setError(error);
          });
    }, []);
 
@@ -60,27 +62,36 @@ export default function BlogMid() {
             </div>
          </div>
 
-         <div id="blog-mid-list">
-            {data.map((item, index) => {
-               return (
-                  <div key={index}>
-                     <img
-                        src={randomPictures[index]}
-                        style={{ objectFit: "cover" }}
-                        alt="woman_in_sunglasses"
-                     />
-                     <Link
-                        to={{
-                           pathname: `/post/${item.title.replace(/ /g, "_")}`,
-                           state: { id: item._id },
-                        }}
-                     >
-                        {item.title}
-                     </Link>
-                  </div>
-               );
-            })}
-         </div>
+         {error ? (
+            <div id="error-container">
+               <h1>Server disconnected!</h1>
+            </div>
+         ) : (
+            <div id="blog-mid-list">
+               {data.map((item, index) => {
+                  return (
+                     <div key={index}>
+                        <img
+                           src={randomPictures[index]}
+                           style={{ objectFit: "cover" }}
+                           alt="woman_in_sunglasses"
+                        />
+                        <Link
+                           to={{
+                              pathname: `/post/${item.title.replace(
+                                 / /g,
+                                 "_"
+                              )}`,
+                              state: { id: item._id },
+                           }}
+                        >
+                           {item.title}
+                        </Link>
+                     </div>
+                  );
+               })}
+            </div>
+         )}
       </div>
    );
 }
