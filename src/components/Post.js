@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 export default function Post() {
    const [data, setData] = useState([]);
    const { title, author, message, date } = data;
+   const [formDate, setFormDate] = useState("");
    const textContentRef = useRef();
    const location = useLocation();
    const [postID] = useState(Object.values(location.state));
@@ -22,6 +23,12 @@ export default function Post() {
          });
    }, [postID]);
 
+   useEffect(() => {
+      if (date) {
+         setFormDate(date.slice(0, date.indexOf("T")));
+      }
+   }, [date]);
+
    if (textContentRef.current) {
       textContentRef.current.innerHTML = message;
    }
@@ -37,7 +44,7 @@ export default function Post() {
          <div id="post-page-text-content" ref={textContentRef}></div>
          <div id="post-page-wrapper">
             <p>{author}</p>
-            <p>{date}</p>
+            <p>{formDate}</p>
          </div>
       </div>
    );
