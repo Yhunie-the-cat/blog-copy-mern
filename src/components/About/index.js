@@ -1,26 +1,25 @@
 import React, { useRef } from "react";
-import AboutTop from "./AboutTop";
-import AboutMid1 from "./AboutMid1";
-import AboutMid2 from "./AboutMid2";
-import AboutBot from "./AboutBot";
-import Header from "../Header";
-import Footer from "../Footer";
+import Wrapper from "./../Wrapper";
+import AboutSection1 from "./js/AboutSection1";
+import AboutSection2 from "./js/AboutSection2";
+import AboutSection3 from "./js/AboutSection3";
+import AboutSection4 from "./js/AboutSection4";
 
 export default function AboutPage() {
-  const targetRef = useRef();
+   const targetRef = useRef();
 
-  const handleClick = () => {
-    targetRef.current.scrollIntoView();
-  };
+   const handleClick = () => {
+      targetRef.current.scrollIntoView();
+   };
 
-  return (
-    <React.Fragment>
-      <Header />
-      <AboutTop handleClick={handleClick} />
-      <AboutMid1 targetRef={targetRef} />
-      <AboutMid2 />
-      <AboutBot />
-      <Footer />
-    </React.Fragment>
-  );
+   return (
+      <React.Fragment>
+         <Wrapper>
+            <AboutSection1 handleClick={handleClick} />
+            <AboutSection2 targetRef={targetRef} />
+            <AboutSection3 />
+            <AboutSection4 />
+         </Wrapper>
+      </React.Fragment>
+   );
 }
