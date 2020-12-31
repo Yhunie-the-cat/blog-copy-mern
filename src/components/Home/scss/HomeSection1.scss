@@ -1,0 +1,76 @@
+// Global styles
+@import "./../../../index.scss";
+
+$grey: #969696;
+
+#top-section {
+   min-height: 730px;
+   position: relative;
+}
+
+#hero-background {
+   width: 50%;
+   height: 700px;
+   object-fit: cover;
+   margin-bottom: 30px;
+}
+
+#hero-center {
+   width: 315px;
+   height: 450px;
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: 105px;
+   margin: auto;
+   filter: sepia(20%);
+}
+
+#hero-text {
+   max-width: 350px;
+   position: absolute;
+   left: calc(50% + 177.5px);
+   bottom: 105px;
+   margin: auto;
+}
+
+#hero-title {
+   color: $grey;
+}
+
+@media (max-width: 840px) {
+   #hero-background {
+      display: none;
+   }
+   #hero-center {
+      left: 20px;
+      right: initial;
+      bottom: initial;
+   }
+   #hero-text {
+      right: 20px;
+      left: initial;
+      bottom: initial;
+      margin-top: 207px;
+   }
+}
+
+@media (max-width: 740px) {
+   #top-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+   #hero-center {
+      all: initial;
+      max-width: 500px;
+      margin-bottom: 40px;
+   }
+   #hero-text {
+      all: initial;
+      margin: 0 20px 40px 20px;
+   }
+   #hero-title {
+      text-align: center;
+   }
+}

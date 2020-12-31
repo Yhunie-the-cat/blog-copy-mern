@@ -1,0 +1,130 @@
+// Global styles
+@import "./../../../index.scss";
+
+#mid-section-b {
+   min-height: 856px;
+   position: relative;
+   background-color: $grey2;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+#mid-section-b-link-container {
+   width: 810px;
+   display: flex;
+   position: absolute;
+   align-items: flex-end;
+   left: 0;
+   right: 0;
+   top: 160px;
+   margin: auto;
+   h2 {
+      width: fit-content;
+      height: fit-content;
+      color: $grey;
+      font-size: 3rem;
+      margin: 0;
+   }
+   a {
+      height: fit-content;
+      font-family: Lato, sans-serif;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: $black;
+      margin-left: 40px;
+      margin-bottom: 15px;
+   }
+}
+
+#mid-section-b-link-container::after {
+   content: "";
+   width: 500px;
+   height: 1px;
+   background-color: $black;
+   position: absolute;
+   bottom: 12px;
+   left: 298px;
+}
+
+#mid-section-b-content {
+   max-width: 890px;
+   height: fit-content;
+   display: flex;
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   margin: auto;
+   div {
+      margin: 0 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+   img {
+      width: 405px;
+      height: 264px;
+      object-fit: cover;
+      object-position: 0 80%;
+   }
+   img[alt="marble_table"] {
+      object-position: 0 50%;
+   }
+   p {
+      font-family: Lato, sans-serif;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      width: fit-content;
+      margin-top: 20px;
+   }
+   a {
+      font-family: OldStandard, sans-serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: $black;
+      text-transform: initial;
+      text-align: center;
+   }
+}
+
+@media (max-width: 910px) {
+   #mid-section-b-link-container {
+      justify-content: center;
+      margin: 0 20px;
+      a {
+         border-bottom: 1px solid black;
+      }
+   }
+   #mid-section-b-link-container::after {
+      display: none;
+   }
+   #mid-section-b-content img {
+      //width: 324px;
+      //height: 211px;
+      width: 45vw;
+   }
+}
+
+@media (max-width: 840px) {
+   #mid-section-b-link-container {
+      position: initial;
+      margin: 40px 20px 0 20px;
+   }
+   #mid-section-b-content {
+      position: initial;
+      flex-direction: column;
+      div {
+         margin: 40px 20px;
+      }
+   }
+}
+
+@media (max-width: 480px) {
+   #mid-section-b-link-container {
+      flex-direction: column;
+      align-items: center;
+   }
+}

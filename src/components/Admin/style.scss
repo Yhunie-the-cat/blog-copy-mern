@@ -1,0 +1,178 @@
+// Global styles
+@import "./../../index.scss";
+
+#admin-page {
+   display: flex;
+   min-height: 800px;
+   height: 100vh;
+   padding: 20px;
+   position: relative;
+   h2 {
+      width: fit-content;
+      height: fit-content;
+      left: 0;
+      right: 0;
+      margin: 0 auto 20px auto;
+   }
+   button {
+      margin-right: 20px;
+   }
+}
+
+#error {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: fit-content;
+   height: fit-content;
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   margin: auto;
+   z-index: 10;
+}
+
+#admin-left {
+   min-width: 20%;
+   width: fit-content;
+   height: 100%;
+   margin-right: 20px;
+   position: relative;
+   z-index: 1;
+}
+#post-list-container {
+   position: relative;
+   height: calc(100% - 130px);
+   overflow-y: scroll;
+   div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      p {
+         font-family: Lato;
+         margin: 0 20px 0 0;
+         width: 160px;
+         border-bottom: 1px solid $grey;
+      }
+   }
+}
+
+#admin-right {
+   width: 100%;
+   height: 100%;
+   position: relative;
+   z-index: 1;
+}
+
+#editor {
+   width: 100%;
+   height: 80%;
+   input {
+      width: 160px;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      margin-right: 40px;
+   }
+   input[type="file"] {
+      width: fit-content;
+   }
+   button {
+      float: right;
+      margin: 0;
+   }
+}
+
+#button-container {
+   width: 100%;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   margin: auto;
+   display: flex;
+   justify-content: flex-end;
+   button:first-child {
+      position: absolute;
+      left: 0;
+   }
+   button:last-child {
+      margin-right: 0;
+   }
+}
+
+#preview {
+   width: 100%;
+   height: calc(100% - 40px);
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   margin: auto;
+   position: absolute;
+   z-index: 2;
+   background-color: $white2;
+   h4 {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 2rem;
+      cursor: pointer;
+      text-transform: uppercase;
+   }
+   div {
+      overflow-y: scroll;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: calc(100% - 40px);
+      height: calc(100% - 50px);
+      border: 1px solid $grey;
+      margin-top: 60px;
+      background-color: $white2;
+   }
+}
+
+#status {
+   width: 400px;
+   height: fit-content;
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   margin: auto;
+   z-index: 5;
+   background-color: $grey2;
+   border-radius: 10px;
+   h4 {
+      font-size: 2.4rem;
+      text-align: center;
+   }
+}
+
+@media (max-width: 1034px) {
+   #admin-page {
+      flex-direction: column;
+      align-items: center;
+   }
+   #admin-left {
+      width: 100%;
+      margin-bottom: 20px;
+      height: 40%;
+   }
+   #admin-right {
+      height: 70%;
+   }
+   #editor {
+      height: 60%;
+   }
+}
+
+@media (max-width: 573px) {
+   #editor {
+      height: 50%;
+   }
+}
