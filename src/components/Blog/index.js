@@ -1,14 +1,13 @@
 import React from "react";
-import Header from "../Header";
-import Blog from "./BlogMid";
-import Footer from "../Footer";
+import Wrapper from "./../Wrapper";
+import BlogSection1 from "./js/BlogSection1";
 
 export default function BlogPage() {
    return (
       <React.Fragment>
-         <Header />
-         <Blog />
-         <Footer />
+         <Wrapper>
+            <BlogSection1 />
+         </Wrapper>
       </React.Fragment>
    );
 }

@@ -4,15 +4,13 @@ import AboutPage from "./components/About";
 import PhotosPage from "./components/Photos";
 import BlogPage from "./components/Blog/";
 import ContactPage from "./components/Contact";
-import AdminPage from "./components/AdminPage";
-import Post from "./components/Post";
-import NotFound from "./components/NotFound";
+import AdminPage from "./components/Admin";
+import PostPage from "./components/Post";
+import PageNotFoundPage from "./components/PageNotFound";
 
 //TODO:
 /*
   []  add imgurl to schema
-
-  []  set mongodb ip address
 */
 
 function App() {
@@ -26,8 +24,8 @@ function App() {
                <Route path="/blog" component={BlogPage} />
                <Route path="/contact" component={ContactPage} />
                <Route path="/admin" component={AdminPage} />
-               <Route path="/post/:title" component={Post} />
-               <Route path="/*" component={NotFound} />
+               <Route path="/post/:title" component={PostPage} />
+               <Route path="/*" component={PageNotFoundPage} />
             </Switch>
          </div>
       </Router>

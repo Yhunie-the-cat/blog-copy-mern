@@ -1,0 +1,60 @@
+// Global styles
+@import "./../../../index.scss";
+
+#about-top {
+   position: relative;
+   height: 763px;
+}
+
+#about-background {
+   width: 50%;
+   height: 656px;
+   float: right;
+   object-fit: cover;
+   filter: sepia(50%);
+}
+
+#about-center {
+   position: absolute;
+   left: 32%;
+   top: 80px;
+   width: 417px;
+   height: 271px;
+}
+
+#about-text {
+   max-width: 433px;
+   position: absolute;
+   right: calc(50% + 20px);
+   bottom: 107px;
+   margin-left: 20px;
+}
+
+#about-title {
+   font-size: 3.2rem;
+   color: $grey;
+}
+
+@media (max-width: 680px) {
+   #about-center {
+      display: none;
+   }
+}
+
+@media (max-width: 580px) {
+   #about-top {
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+   }
+   #about-background {
+      all: initial;
+      height: 500px;
+      object-fit: cover;
+      object-position: top;
+   }
+   #about-text {
+      all: initial;
+      margin: 40px 20px;
+   }
+}
