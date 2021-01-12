@@ -8,11 +8,6 @@ import AdminPage from "./components/Admin";
 import PostPage from "./components/Post";
 import PageNotFoundPage from "./components/PageNotFound";
 
-//TODO:
-/*
-  []  add imgurl to schema
-*/
-
 function App() {
    return (
       <Router>
