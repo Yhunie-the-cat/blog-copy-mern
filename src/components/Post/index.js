@@ -26,7 +26,7 @@ export default function PostPage() {
 
    useEffect(() => {
       if (date) {
-         setFormDate(date.slice(0, date.indexOf("T")));
+         setFormDate(date.split("T")[0]);
       }
    }, [date]);
 
