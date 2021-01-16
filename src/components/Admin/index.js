@@ -265,11 +265,8 @@ export default function AdminPage() {
                </div>
 
                <div id="admin-right">
-                  <h2>Editor</h2>
-                  <div id="editor">
-                     <input type="text" placeholder="Title" ref={titleRef} />
-                     <input type="text" placeholder="Author" ref={authorRef} />
-
+                  <div id="header">
+                     <h2>Editor</h2>
                      <Button
                         variant="contained"
                         color="default"
@@ -278,6 +275,10 @@ export default function AdminPage() {
                      >
                         Clear
                      </Button>
+                  </div>
+                  <div id="editor">
+                     <input type="text" placeholder="Title" ref={titleRef} />
+                     <input type="text" placeholder="Author" ref={authorRef} />
 
                      <textarea id="text-field" ref={messageRef}></textarea>
                   </div>

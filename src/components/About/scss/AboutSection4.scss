@@ -1,7 +1,8 @@
 @import "./../../../variables";
 
 #about-bot {
-   position: relative;
+   display: flex;
+   padding-bottom: 80px;
    img {
       width: 50%;
       height: 600px;
@@ -11,28 +12,17 @@
 
 #about-bot-text {
    max-width: 457px;
-   height: fit-content;
-   position: absolute;
-   top: 0;
-   bottom: 0;
-   margin: auto 20px auto auto;
-   left: calc(50% + 40px);
+   margin: 40px;
    h2 {
-      text-align: center;
+      text-align: left;
    }
 }
 
 @media (max-width: 580px) {
    #about-bot {
-      display: flex;
       flex-direction: column;
       img {
          width: 100%;
       }
-   }
-   #about-bot-text {
-      position: initial;
-      max-width: 100%;
-      margin: 40px 20px;
    }
 }

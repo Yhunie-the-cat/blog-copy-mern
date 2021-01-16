@@ -2,17 +2,8 @@
 
 #admin-page {
    display: flex;
-   min-height: 800px;
-   height: 100vh;
+   width: 100%;
    padding: 20px;
-   position: relative;
-   h2 {
-      width: fit-content;
-      height: fit-content;
-      left: 0;
-      right: 0;
-      margin: 0 auto 20px auto;
-   }
    button {
       margin-right: 20px;
    }
@@ -34,68 +25,69 @@
 }
 
 #admin-left {
-   min-width: 20%;
-   width: fit-content;
-   height: 100%;
-   margin-right: 20px;
-   position: relative;
-   z-index: 1;
+   margin-right: 40px;
+   height: 90vh;
 }
 #post-list-container {
-   position: relative;
-   height: calc(100% - 130px);
    overflow-y: scroll;
+   height: 77vh;
    div {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
       margin-bottom: 20px;
+      padding: 5px;
       p {
          font-family: Lato;
-         margin: 0 20px 0 0;
+         margin: 0 10px 0 0;
          width: 160px;
          border-bottom: 1px solid $grey;
+         overflow: hidden;
+         text-overflow: ellipsis;
+         display: -webkit-box;
+         -webkit-line-clamp: 3;
+         -webkit-box-orient: vertical;
       }
    }
 }
 
 #admin-right {
    width: 100%;
-   height: 100%;
    position: relative;
    z-index: 1;
-}
-
-#editor {
-   width: 100%;
-   height: 80%;
-   input {
-      width: 160px;
-      font-size: 2rem;
+   #header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       margin-bottom: 20px;
-      margin-right: 40px;
+      h2 {
+         margin: 0;
+      }
+      button {
+         height: fit-content;
+      }
    }
-   input[type="file"] {
-      width: fit-content;
-   }
-   button {
-      float: right;
-      margin: 0;
+
+   #editor {
+      height: 62vh;
+      input {
+         width: 160px;
+         font-size: 2rem;
+         margin-right: 40px;
+      }
+      .tox {
+         margin-top: 40px;
+      }
    }
 }
 
 #button-container {
    width: 100%;
-   position: absolute;
-   bottom: 0;
-   left: 0;
-   right: 0;
-   margin: auto;
+   margin-top: 110px;
    display: flex;
    justify-content: flex-end;
    button:first-child {
-      position: absolute;
-      left: 0;
+      margin-right: auto;
    }
    button:last-child {
       margin-right: 0;
@@ -129,7 +121,7 @@
       width: calc(100% - 40px);
       height: calc(100% - 50px);
       border: 1px solid $grey;
-      margin-top: 60px;
+      margin-top: 20px;
       background-color: $white2;
    }
 }
@@ -159,19 +151,20 @@
    }
    #admin-left {
       width: 100%;
-      margin-bottom: 20px;
-      height: 40%;
-   }
-   #admin-right {
-      height: 70%;
-   }
-   #editor {
-      height: 60%;
+      height: 400px;
+      margin: 0;
+      margin-bottom: 40px;
+      #post-list-container {
+         height: 320px;
+      }
    }
 }
 
-@media (max-width: 573px) {
-   #editor {
-      height: 50%;
+@media (max-width: 450px) {
+   #editor input:first-child {
+      margin-bottom: 20px;
+   }
+   #button-container {
+      margin-top: 140px;
    }
 }
