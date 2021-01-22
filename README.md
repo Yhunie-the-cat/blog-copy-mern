@@ -7,6 +7,8 @@ Design from [here](http://kate.theroar.nl)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+You'll need two cmd for running the client and the server!
+
 Client:
 
 ```
