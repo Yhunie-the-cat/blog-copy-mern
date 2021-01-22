@@ -1,25 +1,40 @@
-# Currently work in progress...
+## Description
 
-# Getting Started with Create React App
+Travel/Photograph blog site using MERN.\
+Design from [here](http://kate.theroar.nl)
+
+### Usage
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Client:\
 
-In the project directory, you can run:
+```
+git clone "repository url"
+```
 
-### `npm start`
+```
+cd "repository folder"
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+npm i
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+npm start
+```
 
-## Motivation
+Server:\
 
-This blog based on [this site](http://kate.theroar.nl). First version was made with html, css, js. After I got some React experience, I wanted to try some backend stuff as well, so I re-created this project using MERN stack.
+```
+cd server
+```
 
-## Description
+```
+npm i
+```
 
-Travel/Photograph blog site using React for frontend, node, express for backend and MongoDB for database for creating blog posts.
+```
+npm start
+```
