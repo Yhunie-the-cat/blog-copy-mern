@@ -30,34 +30,13 @@ export default function AdminPage() {
    const author = authorRef.current;
    const message = messageRef.current;
 
+   //Custom popup server response messages
    const showStatus = () => {
       status.hidden = false;
       setTimeout(() => {
          status.hidden = true;
          setStatusText("");
       }, 1800);
-   };
-
-   const inputIsEmpty = () => {
-      title.value = "Title is empty!";
-      title.style.color = "red";
-      author.value = "Author is empty!";
-      author.style.color = "red";
-      message.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].innerHTML =
-         "Message is empty!";
-      message.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].style.color =
-         "red";
-
-      setTimeout(() => {
-         title.value = "";
-         title.style.color = "";
-         author.value = "";
-         author.style.color = "";
-         message.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].innerHTML =
-            "";
-         message.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].style.color =
-            "";
-      }, 1500);
    };
 
    //Action buttons
@@ -70,7 +49,7 @@ export default function AdminPage() {
    const previewRef = useRef();
    const preview = previewRef.current;
 
-   //Render data
+   //Fetch data from mongodb
    useEffect(() => {
       axios
          .get(url)
@@ -88,15 +67,16 @@ export default function AdminPage() {
 
    //Actions
    const createPostButton = () => {
-      console.log(messageRef.current.get);
+      //Error handling (same as input required attribute)
       if (
-         title.value === "" ||
-         author.value === "" ||
+         !title.value ||
+         !author.value ||
          message.nextSibling.children[0].children[1].children[0].children[0]
             .contentDocument.all[5].innerHTML === ""
       ) {
-         inputIsEmpty();
+         window.alert("Empty field(s)!");
       } else {
+         // Create post
          setIsClicked(true);
          axios
             .post(url, {
@@ -114,10 +94,6 @@ export default function AdminPage() {
                console.log(error.response);
                setStatusText(error.response.data.message);
             });
-         title.value = "";
-         author.value = "";
-         message.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].innerHTML =
-            "";
          showStatus();
       }
    };
@@ -158,15 +134,16 @@ export default function AdminPage() {
    };
 
    const updatePostButton = () => {
-      console.log(editButton);
+      //Error handling (same as input required attribute)
       if (
-         title.value === "" ||
-         author.value === "" ||
-         message.nextSibling.children[0].children[1].children[0].children[0]
+         !title.value ||
+         !author.value ||
+         !message.nextSibling.children[0].children[1].children[0].children[0]
             .contentDocument.all[5].innerHTML === ""
       ) {
-         inputIsEmpty();
+         window.alert("Empty field(s)!");
       } else {
+         //Update post
          setIsClicked(true);
          axios
             .patch(`${url}/${postID}`, {
@@ -177,22 +154,18 @@ export default function AdminPage() {
                      .children[0].contentDocument.all[5].innerHTML,
             })
             .then((res) => {
-               console.log(res);
+               console.log(res.statusText);
                setStatusText("Post updated!");
             })
             .catch((error) => {
                console.log(error);
                setStatusText(error.response.data.message);
             });
-
-         title.value = "";
-         author.value = "";
-         message.nextSibling.children[0].children[1].children[0].children[0].contentDocument.all[5].innerHTML =
-            "";
          showStatus();
       }
    };
 
+   //Show preview version of the textarea when 'Preview' button is clicked
    const previewPostButton = () => {
       previewContainer.hidden = false;
       preview.innerHTML =
@@ -204,7 +177,7 @@ export default function AdminPage() {
    };
    //----------
 
-   //Create post button
+   //Custom styled 'Create' button
    const CustomButton = withStyles(() => ({
       root: {
          backgroundColor: "#21ba45",
@@ -215,7 +188,7 @@ export default function AdminPage() {
    }))(Button);
    //-----------
 
-   //Clear button
+   //Delete every text from inputs and textarea when 'Clear' button is clicked
    const clearButton = () => {
       title.value = "";
       author.value = "";
@@ -276,10 +249,10 @@ export default function AdminPage() {
                         Clear
                      </Button>
                   </div>
+
                   <div id="editor">
                      <input type="text" placeholder="Title" ref={titleRef} />
                      <input type="text" placeholder="Author" ref={authorRef} />
-
                      <textarea id="text-field" ref={messageRef}></textarea>
                   </div>
 
